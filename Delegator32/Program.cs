@@ -25,7 +25,12 @@ namespace Delegator32
             };
             // 정렬
             //1. 델리게이터를 사용한 구현
-            products.Sort(SortWithPrice);
+            //products.Sort(SortWithPrice);
+
+            //2. 무명 델리게이터를 사용한 구현
+            products.Sort(delegate (Product x, Product y) { 
+                return x.Price.CompareTo(y.Price);
+            });
 
             //출력
             foreach (var item in products)
