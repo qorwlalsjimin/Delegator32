@@ -33,7 +33,13 @@ namespace Delegator32
             //});
 
             //3. 람다를 사용한 구현
-            products.Sort((x, y) => { return x.Price.CompareTo(y.Price) };
+            //products.Sort((x, y) => {
+            //    return x.Price.CompareTo(y.Price);
+            //});
+            
+            //3-2. 약식 람다를 사용한 구현
+            products.Sort((x, y) => x.Price.CompareTo(y.Price));
+
 
             //출력
             foreach (var item in products)
