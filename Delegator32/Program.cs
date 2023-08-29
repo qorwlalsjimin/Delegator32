@@ -12,6 +12,11 @@ namespace Delegator32
         {
             public string Name { get; set; }
             public int Price { get; set; }
+
+            public override string ToString()
+            {
+                return this.Name+" : "+this.Price;
+            }
         }
         static void Main(string[] args)
         {
@@ -23,6 +28,8 @@ namespace Delegator32
                 new Product() { Name = "배추", Price = 600 },
                 new Product() { Name = "상추", Price = 300 },
             };
+
+            /* 서로 바꿀 줄 알아야 함 - 시험문제 */
             // 정렬
             //1. 델리게이터를 사용한 구현
             //products.Sort(SortWithPrice);
@@ -42,10 +49,12 @@ namespace Delegator32
 
 
             //출력
-            foreach (var item in products)
-            {
-                Console.WriteLine(item.Name + " : " + item.Price);
-            }
+            //foreach (var item in products)
+            //{
+            //    Console.WriteLine(item.Name + " : " + item.Price);
+            //}
+
+            products.ForEach(p => Console.WriteLine(p.ToString()));
         }
 
         private static int SortWithPrice(Product x, Product y)
