@@ -54,7 +54,7 @@ namespace Delegator32
             //    Console.WriteLine(item.Name + " : " + item.Price);
             //}
 
-            products.ForEach(p => Console.WriteLine(p.ToString()));
+            products.ForEach(p => Console.WriteLine(p));
         }
 
         private static int SortWithPrice(Product x, Product y)
